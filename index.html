@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIFX Color Cycling</title>
+</head>
+<body>
+  <h1>LIFX Color Cycling</h1>
+  <button id="startButton">Start Cycling</button>
+  <button id="stopButton">Stop Cycling</button>
+  <script>
+    document.getElementById("startButton").addEventListener("click", function() {
+      // Send a request to start color cycling
+      fetch("/start-color-cycling")
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    });
+
+    document.getElementById("stopButton").addEventListener("click", function() {
+      // Send a request to stop color cycling
+      fetch("/stop-color-cycling")
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    });
+  </script>
+</body>
+</html>
